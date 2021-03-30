@@ -10,9 +10,9 @@
 <div id="corps">
 <?php
 	try {
-		$connexion= new PDO("mysql:host=localhost;dbname=FaceLOOK","root", "");
+		$connexion = new PDO('mysql:host=localhost;dbname=facelook','root', '');
 	} catch (PDOException $e) {
-		print "Erreur !: " . $e->getMessage() . "<br/>";
+		print $e->getMessage() . "<br/>";
 		die();
 	}
 
@@ -35,7 +35,6 @@ if (!isset($_POST['nom']) ||!isset($_POST['prenom']) ||!isset($_POST['pseudo'])
 		}else{
 			echo 'Utilisateur ajouté, vous pouvez aller sur <a href="FaceLookMur.php"> votre Mur</a>';
 		}
-	
 	}
 	$connexion = null; // deconnexion
 ?>
